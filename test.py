@@ -16,11 +16,12 @@ public_tweets = api.home_timeline()
 for tweet in public_tweets:
     print(tweet.text)
 i=0
-for tweet in tweepy.Cursor(api.user_timeline,id='kayiminus').items():
-   if i ==10:
+liste_tweet=[]
+for tweet in tweepy.Cursor(api.user_timeline,id='NonsR971').items():
+   if i ==100:
    	break 
    if(tweet.text[0]!='@' and tweet.text[0:2]!='RT'):
-   	print (tweet.text)
+   	liste_tweet.append(tweet.text)
    	i=i+1
 
 
